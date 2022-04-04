@@ -19,7 +19,6 @@ export class SummaryComponent implements OnInit {
     for (let i = 0; i < this.transactions.length; i++) {
       this.allTransactions += this.transactions[i].length;
     }
-    console.log(this.allTransactions);
   }
   firstLetterCaps(el: string) {
     return el.charAt(0).toUpperCase() + el.slice(1);
