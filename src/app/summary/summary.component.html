@@ -1,0 +1,32 @@
+<div class="container border border-top-0 text-center p-0">
+  <div class="info p-5">
+    <h2>Welcome</h2>
+    <p>With supporting text below as a natural lead-in to additional content</p>
+    <button type="button" class="btn btn-primary" routerLink="/navigator">
+      See transactions
+    </button>
+  </div>
+  <div class="container bg-light border border-end-0 border-start-0 p-3">
+    You have {{ allTransactions }} transactions
+  </div>
+  <div class="container p-3 d-flex justify-content-center flex-wrap">
+    <div
+      *ngFor="let item of transactions; index as i"
+      [class]="item[0].type"
+      class="item border rounded text-left m-1 p-3"
+    >
+      <div class="content d-flex flex-column">
+        <h3>{{ item.length }}</h3>
+        <h6>{{ firstLetterCaps(item[0].type) }}</h6>
+        <button
+          type="button"
+          class="btn btn-primary px-3 align-self-end ms-2 w-50"
+          routerLink="/navigator"
+          [queryParams]="{ tab: i }"
+        >
+          See all
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
